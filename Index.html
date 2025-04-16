@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>;วันเกิดของอ้วนงัยย 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Kanit', sans-serif;
+      background: #fff0f6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* หน้าล็อกอิน */
+    #login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffcde0, #d0f0ff);
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      color: #ff5c8a;
+    }
+
+    .login-box input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .login-box button {
+      background: #ff5c8a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* แกลเลอรี */
+    #gallery {
+      display: none;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .grid img {
+      width: 100%;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Popup */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      display: none;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .popup-content h3 {
+      color: #ff5c8a;
+      margin-bottom: 15px;
+    }
+
+    .popup-content p {
+      line-height: 1.6;
+    }
+
+    .popup-content button {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ฟองหัวใจ */
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .heart {
+      position: absolute;
+      color: pink;
+      animation: floatUp 6s ease-in infinite;
+      font-size: 20px;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<!-- หน้าล็อกอิน -->
+<div id="login">
+  <div class="login-box">
+    <h2> วันครบรอบของเราไงอ้วนน ( 6ตัวคั้บ )</h2>
+    <input type="password" id="password" placeholder="ใส่ตรงนี้ค้าบบ">
+    <button onclick="checkPassword()">ปลดล็อก</button>
+  </div>
+</div>
+
+<!-- แกลเลอรี -->
+<div id="gallery">
+  <h2 style="text-align:center; color:#ff5c8a; margin-bottom:20px;">สุขสันต์วันเกิดคั้บอ้วน อันนี้ตั้งใจทำจริงๆน้าา 📸</h2>
+  <div class="grid">
+    <!-- 9 รูป -->
+    <img src="IMG_8426.JPG" onclick="showStory(0)">
+    <img src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\2765C379-1E08-48F2-9233-C6B04F16AF37.jpg" onclick="showStory(1)">
+    <img src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\B5CE63D4-2C60-419B-8D98-7DBE40132834.jpg" onclick="showStory(2)">
+    <img src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\AC47EAD7-098E-437B-918F-59BE83E7BC44.jpg" onclick="showStory(3)">
+    <img src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\6EF5FC1E-E1C3-4D29-A492-68A6D8EC6996.jpg" onclick="showStory(4)">
+    <img src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\8D3C94B4-06FA-4371-B16D-42769EBA93D1.jpg" onclick="showStory(5)">
+    <img src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\880A26B7-FF10-4550-8301-2AE7A5653DB5.jpg" onclick="showStory(6)">
+    <img src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\B14F9927-FBB1-4E88-BF5A-C1F58D3AEA20.jpg" onclick="showStory(7)">
+    <img src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\3639F9F4-9076-46A8-8CD5-7B9481C417E6.jpg" onclick="showStory(8)">
+  </div>
+
+  <!-- วิดีโอคลิป -->
+  <div style="margin-top:50px; text-align:center;">
+    <h2 style="color:#ff5c8a;">🎬 เค้ามีอะไรจะบอก 💌</h2>
+    <video controls width="80%" style="margin-top:20px; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,0.2);">
+      <source src="c:\Users\poonn\OneDrive\Documents\ทำให้แฟนนน\IMG_8423.MOV" type="video/mp4">
+      วิดีโอของคุณไม่รองรับในเบราว์เซอร์นี้
+    </video>
+  </div>
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <button onclick="closePopup()">×</button>
+    <h3 id="popup-title">ความทรงจำ</h3>
+    <p id="popup-text">รายละเอียดของภาพนี้...</p>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const correctPassword = "110623";
+  const gallery = document.getElementById("gallery");
+  const login = document.getElementById("login");
+
+  function checkPassword() {
+    const input = document.getElementById("password").value;
+    if (input === correctPassword) {
+      login.style.display = "none";
+      gallery.style.display = "block";
+    } else {
+      alert("รหัสไม่ถูกต้องนะค้าบ ลองใหม่เลยย 💔");
+    }
+  }
+
+  const stories = [
+    { title: "วันธรรมดาของเราตอนม.4", text: "รูปนี้ตอนเราคบกันแรกๆ ถ่ายตอนเดือนพฤศจิกายน หกหก เราน่ารักกันจังถึงแม้ว่าจะทะเลาะกันหลายครั้งเค้าก็รู้ว่ายังไงเธอก็รักเค้ามากๆ 💖" },
+    { title: "มอห้าห้าห้า", text: "รูปนี้เค้าเห็นเราทำหน้าน่ารักดีเค้าเลยเอามาใส่ อ้วนน่ารักจัง🌈" },
+    { title: "วันว่างๆหลังสอบเสร็จจ", text: "วันนั้นเธอเลือกที่จะไม่ไปกับเพื่อนแล้วเลือกที่จะมาอยู่กับเค้าแทน เราได้เล่น Got it กันด้วยยน้าาาจำได้มั้ยคะ สนุกม้ากกก💍" },
+    { title: "วันไปเที่ยวว", text: "แหะๆ อันนี้วันที่เราไปเที่ยวกันไง ( วันเกิดเค้า ) เธอตั้งใจหาของขวัญหลายอย่างเลยง่ะ ทั้งเสื้อ ทั้งรูปม้วนๆ ทั้งการ์ด ทั้งดอกไม้ แล้วของสติ๊กเกอร์ เค้ารักเธอมาากกๆๆๆเลยนะ💫" },
+    { title: "เราสามคน", text: "ดีใจจังที่อ้วนไล่อ่านจนมาถึงนี่ อันนี้อ้วนจำได้มั้ยเราพาเปรมไปเที่ยวพิพิธภัณฑ์กันน วันนั้นอ้วนมีความอดทนสูงมากกกกอ้วนเก่งจัง เหมือนเราได้ซ้อมเลี้ยงลูกของเราเลยยย เค้ามีความสุขมากๆเลยนะวันนั้น🥺" },
+    { title: "ในคาบปลูกไม้ดอก", text: "เค้ามองเธอตัวติ้ดเดียวเองงง อ้วนน่ารักมากๆนะคะ เวลาหยิบมาถ่ายเค้าชอบเธอมากๆเลย แล้วไม่ต้องคิดเลยนะว่าแล้วตอนที่ไม่ถ่ายไม่ชอบหรอ ชอบคั้บบ ห้วยย☔" },
+    { title: "Science Camp", text: "เวลาเราอยู่ด้วยกันเราหัวเราะออกมาจริงๆก็ดีเนาะเค้ารู้สึกดีมากเลยเวลาอยู่กับเธอ ถึงแม้ว่าจะมีทะเลาะกันบ้างก็เหอะะ แต่เค้าก็รักเธอจริงๆนะคะ💕" },
+    { title: "เธอในมุมโปรด", text: "เธอรักเค้าจริงๆเค้าเชื่อเลยนะเธอคอยเก็บทุกๆโมเมนต์ของเรา เค้ารักเธอนะ😳" },
+    { title: "วันที่เรากอดกันแน่น", text: "รูปสุดท้ายเน้ววว ไม่ว่าอะไรจะเกิดขึ้นสัญญาได้มั้ยว่าจะอยู่กับเค้า เค้าเคยทำผิดกับเธอมาหลายอย่างทั้งเรื่องเล็กและเรื่องใหญ่แต่สุดท้ายตอนนนี้อ้วนก็อยู่กับเค้า เค้ามีความสุขมากจริงๆนะ ถึงแม้เค้าจะเกิดแฮปปี้เบิร์ดเดย์เธอช้าา แต่เค้าตั้งใจทำมากๆเลยคั้บ    กอดดๆๆ🤗" },
+  ];
+
+  function showStory(index) {
+    document.getElementById("popup-title").textContent = stories[index].title;
+    document.getElementById("popup-text").textContent = stories[index].text;
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+
+  // ฟองหัวใจลอย
+  const heartsContainer = document.getElementById("hearts");
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    heart.textContent = "❤️";
+    heartsContainer.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 300);
+</script>
+</body>
+</html>
